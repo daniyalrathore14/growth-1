@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First-Class Functions Example</title>
+</head>
+<body>
+
+<h2>First-Class Functions Example</h2>
+
+<p>Result: <span id="result"></span></p>
+
+<script>
+  function operate(func, x, y) {
+      return func(x, y);
+  }
+
+  function add(a, b) {
+      return a + b;
+  }
+
+  function subtract(a, b) {
+      return a - b;
+  }
+
+  function multiply(a, b) {
+      return a * b;
+  }
+
+  function divide(a, b) {
+      return a / b;
+  }
+
+  document.getElementById("result").innerText = operate(add, 5, 3); // Output: 8
+
+  const myFunc = function(x) {
+      return x * x;
+  };
+
+  const functionsArray = [add, subtract, multiply, divide];
+  console.log(functionsArray[0](8, 2)); 
+  console.log(functionsArray[1](8, 2));
+  console.log(functionsArray[2](8, 2));
+  console.log(functionsArray[3](8, 2)); 
+
+</script>
+
+</body>
+</html>

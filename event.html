@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events Example</title>
+</head>
+<body>
+
+<input type="text" id="myInput" placeholder="Type here">
+<button id="myButton">Click Me</button>
+
+<script>
+    var input = document.getElementById('myInput');
+    var button = document.getElementById('myButton');
+
+    function handleInputMouseDown() {
+        sendMessage("Mouse button pressed down over the input field!");
+    }
+
+    function handleInputMouseUp() {
+        sendMessage("Mouse button released over the input field!");
+    }
+
+    function handleInputMouseOver() {
+        sendMessage("Mouse pointer entered the input field!");
+    }
+
+    function handleInputMouseOut() {
+        sendMessage("Mouse pointer left the input field!");
+    }
+
+    function handleButtonClick() {
+        sendMessage("Button clicked!");
+    }
+
+    function handleButtonMouseOver() {
+        sendMessage("Mouse pointer entered the button!");
+    }
+
+    function handleButtonMouseOut() {
+        sendMessage("Mouse pointer left the button!");
+    }
+
+    // input event listeners 
+    input.addEventListener('mousedown', handleInputMouseDown);
+    input.addEventListener('mouseup', handleInputMouseUp);
+    input.addEventListener('mouseover', handleInputMouseOver);
+    input.addEventListener('mouseout', handleInputMouseOut);
+
+    // button event listeners 
+    button.addEventListener('click', handleButtonClick);
+    button.addEventListener('mouseover', handleButtonMouseOver);
+    button.addEventListener('mouseout', handleButtonMouseOut);
+
+    // Function to send a message
+    function sendMessage(message) {
+        console.log(message); 
+    }
+</script>
+
+</body>
+</html>
